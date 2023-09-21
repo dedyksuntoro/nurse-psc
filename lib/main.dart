@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:nurse_psc/Login/login_screen.dart';
 import 'package:nurse_psc/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: DesignCourseHomeScreen(),
+      home: const LoginScreen(),
+      // home: DesignCourseHomeScreen(),
     );
   }
 }
