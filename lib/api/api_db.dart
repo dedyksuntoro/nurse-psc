@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 String _baseUrl = "http://192.168.0.113/_api_elearing/";
 // String _baseUrl = "https://mobile.mppm.cc/_online_mppm_api/";
 
-class ApiClient {
+class ApiDb {
   // Future<Response> registerUser() async {
   //   //IMPLEMENT USER REGISTRATION
   // }
