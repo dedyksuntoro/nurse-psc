@@ -13,7 +13,7 @@ class ApiDb {
 
   Future login(String username, String password) async {
     try {
-      Response response = await post(Uri.parse(_baseUrl + 'login.php'),
+      Response response = await post(Uri.parse('${_baseUrl}login.php'),
           body: {'username': username, 'password': password});
       //returns the successful user data json object
       // print(response);
