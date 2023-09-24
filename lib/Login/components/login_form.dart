@@ -32,6 +32,10 @@ class _LoginFormState extends State<LoginForm> {
         passwordController.text,
       );
 
+      // print(usernameController.text);
+      // print(passwordController.text);
+      // print(data);
+
       if (data['error'] == 'Invalid User') {
         LoadingScreen().hide();
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
