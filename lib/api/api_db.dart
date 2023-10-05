@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String _baseUrl = "http://192.168.0.102/api_elearning/";
+String _baseUrl = "http://192.168.1.7/api_elearning/";
 // String _baseUrl = "https://mobile.mppm.cc/_online_mppm_api/";
 
 class ApiDb {

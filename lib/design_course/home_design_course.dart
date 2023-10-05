@@ -1,9 +1,13 @@
+import 'package:nurse_psc/api/api_db.dart';
 import 'package:nurse_psc/design_course/category_list_view.dart';
 import 'package:nurse_psc/design_course/course_info_screen.dart';
 import 'package:nurse_psc/design_course/popular_course_list_view.dart';
 import 'package:nurse_psc/main.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'design_course_app_theme.dart';
+
+final ApiDb _apiDb = ApiDb();
 
 class DesignCourseHomeScreen extends StatefulWidget {
   const DesignCourseHomeScreen({super.key});
@@ -13,7 +17,20 @@ class DesignCourseHomeScreen extends StatefulWidget {
 }
 
 class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
+  String id = "";
+  String username = "";
   CategoryType categoryType = CategoryType.ui;
+
+  @override
+  void initState() async {
+    // TODO: implement initState
+    super.initState();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    dynamic dataToken = await _apiDb.login(
+        prefs.get('user').toString(), prefs.get('pass').toString());
+    id = prefs.getString('id') ?? '-';
+    username = prefs.getString('username') ?? '-';
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -48,12 +48,11 @@ class _LoginFormState extends State<LoginForm> {
         _apiDb.logout();
       } else {
         if (data['token'] != null) {
-          print(data);
           SharedPreferences prefs = await SharedPreferences.getInstance();
           prefs.setString('token', data['token'].toString());
-          prefs.setString('id', passwordController.text);
-          prefs.setString('id_user', usernameController.text);
-          prefs.setString('username', data['id_sopir'].toString());
+          prefs.setString('id', data['id'].toString());
+          prefs.setString('username', usernameController.text);
+          prefs.setString('password', passwordController.text);
           LoadingScreen().hide();
           _completeLogin();
         } else {
